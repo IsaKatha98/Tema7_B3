@@ -22,6 +22,10 @@ public class Articulo {
 	 */
 	private int cuantosQuedan;
 	
+	private enum Departamento {Electronica, Alimentación, Droguería};
+	
+	private Departamento departamento;
+	
 	/**
 	 * Constructor de la clase Articulo que no devuelve nada.
 	 * 
@@ -29,7 +33,7 @@ public class Articulo {
 	 * @param precio
 	 * @param cuantosQuedan
 	 */
-	public Articulo (String nombre, double precio, int cuantosQuedan) {
+	public Articulo (String nombre, double precio, int cuantosQuedan, String departamento) {
 		
 		if (!nombre.isEmpty()&&nombre!=null) {
 			
@@ -60,8 +64,69 @@ public class Articulo {
 			
 		}
 		
+		this.departamento= Departamento.valueOf(departamento);
+		
 	}
 	
+	
+	
+	
+	public String getNombre() {
+		return nombre;
+	}
+
+
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+
+
+	public double getPrecio() {
+		return precio;
+	}
+
+
+
+
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+
+
+
+
+	public int getCuantosQuedan() {
+		return cuantosQuedan;
+	}
+
+
+
+
+	public void setCuantosQuedan(int cuantosQuedan) {
+		this.cuantosQuedan = cuantosQuedan;
+	}
+
+
+
+
+	public Departamento getDepartamento() {
+		return departamento;
+	}
+
+
+
+
+	public void setDepartamento(Departamento departamento) {
+		this.departamento = departamento;
+	}
+
+
+
+
 	/**
 	 *  Método que pasa a String todos los atributos y los devuelve a modo de mensaje
 	 *  
@@ -75,6 +140,7 @@ public class Articulo {
 		result+="Precio: "+this.precio+"\n";
 		result+="IVA: "+IVA+"\n";
 		result+="Cantidades en stock: "+this.cuantosQuedan+"\n";
+		result+="Departamento al que pertenece: "+this.departamento+"\n";
 		
 		return result;
 		

@@ -5,7 +5,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		//Creamos el objeto.
-		Articulo art= new Articulo ("Colonia", 10.50, 7);
+		Articulo art= new Articulo ("Colonia", 10.50, 7, "Alimentacion");
 		
 		double precio=art.getPVP();
 		double precioDescuento=art.getPVPDescuento(0.25);
